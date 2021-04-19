@@ -1,12 +1,10 @@
-import { Container, Grid, Typography } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import React from "react";
-import { useStyles } from "../style";
-import TableauReport from 'tableau-react';
+import TableauReport from "tableau-react";
 
 export default function TableauKemendagri() {
-  const classes = useStyles();
   const options = {
-    height: 720,
+    height: 730,
     width: "100%",
   };
 
@@ -15,43 +13,19 @@ export default function TableauKemendagri() {
 
   return (
     <React.Fragment>
-      {/* <Container fixed component="main" className={classes.heroContent}>
-        <Typography
-          component="h1"
-          variant="h2"
-          align="center"
-          color="textPrimary"
-          gutterBottom
-        >
-          Kemendagri Dashboard
-        </Typography>
-      </Container> */}
       <Grid container spacing={1}>
-        <Grid item xs={12}>
+        <Grid item xs={1}></Grid>
+        <Grid item xs={10}>
           <TableauReport
             // url="https://public.tableau.com/views/DashboardLRAop_2/RealisasiAnggaran?:language=en&:display_count=y&:origin=viz_share_link"
-            url="http://192.168.193.177/views/DemografiPendudukIndonesia/Dashboard1?:showAppBanner=false&:display_count=n&:showVizHome=n&:origin=viz_share_link&:isGuestRedirectFromVizportal=y&:embed=y"
+            // url="http://192.168.193.177/views/DemografiPendudukIndonesia/Dashboard1?:showAppBanner=false&:display_count=n&:showVizHome=n&:origin=viz_share_link&:isGuestRedirectFromVizportal=y&:embed=y"
+            url="https://public.tableau.com/views/DemografiPendudukIndonesia/Dashboard13?:language=en&:display_count=y&publish=yes&:origin=viz_share_link"
             // filters={filters}
             options={options} // vizCreate options
             refreshSeconds={refreshSeconds}
           />
         </Grid>
-        {/* <Grid item xs={12}>
-          <TableauReport
-            url="https://public.tableau.com/views/DashboardLRAop_4/RealisasiAnggaran?:language=en&:display_count=y&:origin=viz_share_link"
-            // filters={filters}
-            options={options} // vizCreate options
-            refreshSeconds={refreshSeconds}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TableauReport
-            url="https://public.tableau.com/views//CapaianKegiatanAPBDDKIJakarta/CapaianKegiatanAPBDDKIJakarta?:language=en&:display_count=y&:origin=viz_share_link"
-            // filters={filters}
-            options={options} // vizCreate options
-            refreshSeconds={refreshSeconds}
-          />
-        </Grid> */}
+        <Grid item xs={1}></Grid>
       </Grid>
     </React.Fragment>
   );

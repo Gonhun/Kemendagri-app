@@ -1,14 +1,14 @@
 import { fade, makeStyles } from "@material-ui/core";
-import background from '../assets/img/background_sipd.png';
+// import background from '../assets/img/background_sipd.png';
 
 const drawerWidth = 240;
 
 export const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'block',
-    height: "auto",
+    display:"static",
     backgroundSize:"cover",
     backgroundColor: fade("#2f323e", 0.5),
+    backgroundPosition: "center"
     // backgroundAttachment: "fixed"
   },
   appBar: {

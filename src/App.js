@@ -5,20 +5,16 @@ import {
   Container,
   createMuiTheme,
   CssBaseline,
-  IconButton,
   MuiThemeProvider,
   Slide,
-  Toolbar,
   Typography,
   useScrollTrigger,
-  useTheme,
 } from "@material-ui/core";
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import PropTypes from "prop-types";
-import MenuIcon from "@material-ui/icons/Menu";
-import TableauKemendagri from "./Component/Tableau/TableauKemendagri";
 import background from "./assets/img/background_sipd.png";
+import TableauKemendagriNew from "./Component/Tableau/TableauKemendagriNew";
 
 function HideOnScroll(props) {
   const { children, window } = props;
@@ -36,25 +32,11 @@ function HideOnScroll(props) {
 
 HideOnScroll.propTypes = {
   children: PropTypes.element.isRequired,
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window: PropTypes.func,
 };
 
 function App(props) {
   const classes = useStyles();
-  const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
 
   const themeLight = createMuiTheme({
     palette: {
@@ -93,39 +75,18 @@ function App(props) {
       <BrowserRouter>
         <div className={classes.root}>
           <CssBaseline />
-          {/* <NavBar
-          open={open}
-          onOpen={handleDrawerOpen}
-          onClose={handleDrawerClose}
-        /> */}
           <HideOnScroll {...props}>
             <AppBar position="fixed" elevation={0} className={classes.appBar}>
-              {/* <Toolbar>
-                <div className={classes.toolbarButtons}>
-                  <IconButton
-                    style={{ color: "#eeeeee" }}
-                    aria-label="open drawer"
-                    edge="start"
-                  >
-                    <MenuIcon />
-                    <Typography variant="subtitle1" noWrap>
-                      Menu
-                    </Typography>
-                  </IconButton>
-                </div>
-              </Toolbar> */}
             </AppBar>
           </HideOnScroll>
           <main className={classes.content}>
-            <Container fixed component="main" className={classes.heroContent}>
-              <Typography variant="h5" align="center" noWrap>
+            <Container maxWidth="lg" component="main" className={classes.heroContent}>
+              <Typography variant="h5" align="center">
                 Sistem Informasi Pemerintahan Daerah
               </Typography>
             </Container>
-            {/* <div className={classes.drawerHeader} /> */}
             <Switch>
-              {/* <Route exact path="/kemenag" component={TableauKemenag} /> */}
-              <Route exact path="/" component={TableauKemendagri} />
+              <Route exact path="/" component={TableauKemendagriNew} />
             </Switch>
           </main>
         </div>
